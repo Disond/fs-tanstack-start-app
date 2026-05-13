@@ -27,7 +27,9 @@ export default function Navbar() {
                 <div className="flex items-center gap-2">
                     <ModeToggle />
 
-                    <Button className="px-5 py-2 text-sm">Get Started</Button>
+                    <Button asChild className="px-5 py-2 text-sm">
+                        <Link to="/signup">Get Started</Link>
+                    </Button>
                 </div>
             </nav>
         </header>

@@ -3,7 +3,6 @@ import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import { TanStackDevtools } from '@tanstack/react-devtools'
 
 import appCss from '../styles.css?url'
-import Navbar from '#/components/Navbar'
 import { ThemeProvider } from '#/components/ui/theme-provider'
 
 export const Route = createRootRoute({
@@ -38,7 +37,6 @@ function RootDocument({ children }: { children: React.ReactNode }) {
             </head>
             <body>
                 <ThemeProvider defaultTheme="system" storageKey="theme">
-                    <Navbar />
                     {children}
                 </ThemeProvider>
 
