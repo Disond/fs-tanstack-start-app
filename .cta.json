@@ -11,7 +11,7 @@
     }
   },
   "envVarValues": {},
-  "git": false,
+  "git": true,
   "install": true,
   "routerOnly": false,
   "version": 1,
