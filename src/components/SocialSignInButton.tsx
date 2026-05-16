@@ -9,6 +9,7 @@ type SocialProvider = 'google' | 'github'
 type SocialSingInButtonProps = {
     provider: SocialProvider
     callbackURL?: string
+    mode?: 'signin' | 'signup'
 }
 
 const providerOpts = {
@@ -45,9 +46,11 @@ const providerOpts = {
 export function SocialSingInButton({
     provider,
     callbackURL = '/',
+    mode = 'signin',
 }: SocialSingInButtonProps) {
     const [isLoading, setIsLoading] = useState(false)
     const opt = providerOpts[provider]
+    const optMode = mode === 'signin' ? 'Sign in' : 'Sign up'
 
     const handleSignIn = async () => {
         try {
@@ -59,6 +62,7 @@ export function SocialSingInButton({
                 fetchOptions: {
                     onError: ({ error }) => {
                         toast.error(error.message)
+                        setIsLoading(false)
                     },
                 },
             })
@@ -80,7 +84,7 @@ export function SocialSingInButton({
             ) : (
                 opt.icon
             )}
-            Sign in with {opt.label}
+            {optMode} with {opt.label}
         </Button>
     )
 }
