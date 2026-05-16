@@ -21,6 +21,7 @@ import { Input } from '#/components/ui/input'
 import { Link, useNavigate } from '@tanstack/react-router'
 import { useTransition } from 'react'
 import { authClient } from '#/lib/auth-client'
+import { SocialSingInButton } from './SocialSignInButton'
 
 export function SignUpForm() {
     const navigate = useNavigate()
@@ -95,7 +96,15 @@ export function SignUpForm() {
                     >
                         <FieldGroup className="gap-6">
                             <Field className="grid md:grid-cols-2 md:gap-6 gap-3">
-                                <Button
+                                <SocialSingInButton
+                                    provider="google"
+                                    mode="signup"
+                                />
+                                <SocialSingInButton
+                                    provider="github"
+                                    mode="signup"
+                                />
+                                {/* <Button
                                     variant="outline"
                                     type="button"
                                     className="text-sm text-medium text-card-foreground gap-2 cursor-pointer dark:bg-background rounded-lg h-9 shadow-xs"
@@ -106,8 +115,8 @@ export function SignUpForm() {
                                         className="h-4 w-4"
                                     />
                                     Sign up with Google
-                                </Button>
-                                <Button
+                                </Button> */}
+                                {/* <Button
                                     variant="outline"
                                     type="button"
                                     className="text-sm text-medium text-card-foreground gap-2 cursor-pointer dark:bg-background rounded-lg h-9 shadow-xs"
@@ -123,7 +132,7 @@ export function SignUpForm() {
                                         className="hidden dark:block  h-4 w-4"
                                     />
                                     Sign up with Github
-                                </Button>
+                                </Button> */}
                             </Field>
                             <FieldSeparator className="*:data-[slot=field-separator-content]:bg-card text-sm text-muted-foreground bg-transparent">
                                 <span className="px-4">or sign up with</span>

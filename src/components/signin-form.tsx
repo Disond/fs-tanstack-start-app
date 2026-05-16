@@ -108,7 +108,8 @@ export function SignInForm() {
                                     Sign in with Google
                                 </Button> */}
                                 <SocialSingInButton provider="google" />
-                                <Button
+                                <SocialSingInButton provider="github" />
+                                {/* <Button
                                     variant="outline"
                                     type="button"
                                     className="text-sm text-medium text-card-foreground gap-2 dark:bg-background rounded-lg h-9 shadow-xs cursor-pointer"
@@ -124,7 +125,7 @@ export function SignInForm() {
                                         className="hidden dark:block  h-4 w-4"
                                     />
                                     Sign in with Github
-                                </Button>
+                                </Button> */}
                             </Field>
                             <FieldSeparator className="*:data-[slot=field-separator-content]:bg-card text-sm text-muted-foreground bg-transparent">
                                 <span className="px-4">or sign in with</span>
