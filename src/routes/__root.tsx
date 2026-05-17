@@ -3,6 +3,7 @@ import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import { TanStackDevtools } from '@tanstack/react-devtools'
 
 import appCss from '../styles.css?url'
+import '../styles.css'
 import { ThemeProvider } from '#/components/ui/theme-provider'
 import { Toaster } from '#/components/ui/sonner'
 
@@ -20,12 +21,12 @@ export const Route = createRootRoute({
                 title: 'TanStack Start Starter',
             },
         ],
-        links: [
-            {
-                rel: 'stylesheet',
-                href: appCss,
-            },
-        ],
+        // links: [
+        //     {
+        //         rel: 'stylesheet',
+        //         href: appCss,
+        //     },
+        // ],
     }),
     shellComponent: RootDocument,
 })
