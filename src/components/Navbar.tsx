@@ -1,9 +1,10 @@
 import { Link } from '@tanstack/react-router'
 import { ClipboardPenLine, Loader2, Zap } from 'lucide-react'
 import { Button } from './ui/button'
-import { ModeToggle } from './ui/mode-toggle'
-import { SingOutButton } from './singOutButton'
+// import { ModeToggle } from './ui/mode-toggle'
+import { SignOutButton } from './signOutButton'
 import { authClient } from '#/lib/auth-client'
+import { ThemeToggleModed } from './ui/theme-toggle-moded'
 
 export default function Navbar() {
     const { data: session, isPending } = authClient.useSession()
@@ -29,18 +30,19 @@ export default function Navbar() {
                 </Link>
 
                 <div className="flex items-center gap-2">
-                    <ModeToggle />
+                    {/* <ModeToggle /> */}
+                    <ThemeToggleModed />
 
                     {isPending ? (
                         <Loader2 className="h-5 w-5 animate-spin text-primary" />
                     ) : session ? (
                         <>
                             <Button asChild className="px-5 py-2 text-sm">
-                                <Link to="/signin">
+                                <Link to="/dashboard">
                                     <ClipboardPenLine /> Dashboard
                                 </Link>
                             </Button>
-                            <SingOutButton />
+                            <SignOutButton />
                         </>
                     ) : (
                         <>

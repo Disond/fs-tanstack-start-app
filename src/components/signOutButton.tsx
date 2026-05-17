@@ -3,7 +3,7 @@ import { toast } from 'sonner'
 import { Button } from './ui/button'
 import { LogOut } from 'lucide-react'
 
-export function SingOutButton() {
+export function SignOutButton() {
     const handleSignOut = async () => {
         await authClient.signOut({
             fetchOptions: {
